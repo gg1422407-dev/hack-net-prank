@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KaiiWeb.id - Link Share</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    .link-box {
+      background: #1c1c1c;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 10px 0;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .link-box:hover {
+      background: #333;
+      transform: scale(1.03);
+    }
+
+    a {
+      text-decoration: none;
+      color: #00ffff;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    /* Tombol Audio */
+    #audio-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 10px 15px;
+      font-size: 14px;
+      background-color: #111;
+      color: #00ffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+
+    #audio-toggle:hover {
+      background-color: #222;
+    }
+
+    /* Animasi klik */
+    #audio-toggle.clicked {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔊 Musik -->
+  <audio id="bg-audio" loop autoplay>
+    <source src="https://files.catbox.moe/qrtrwl.mp3" type="audio/mp3">
+  </audio>
+  <button id="audio-toggle" onclick="toggleAudio()">🔊 Audio: On</button>
+
+  <!-- Logo -->
+  <img src="https://files.catbox.moe/20nvhm.jpg" alt="Logo KaiiMapper" class="logo" />
+
+  <h1>Welcome To Web KaiiMapper.id</h1>
+  <p>Link Share Mapping By Kaii Di Bawah</p>
+
+  <div class="link-box"><a href="https://www.mediafire.com/file/i4msorqzmod1y3u/LS_KARNAVAL.txt/file" target="_blank">Mapping Ls Karnaval</a></div>
+  <div class="link-box"><a href="https://www.mediafire.com/file/d8hflwqizin8eum/rs+forshare.txt/file" target="_blank">Rumah Sakit Las Venturas</a></div>
+  <div class="link-box"><a href="https://www.mediafire.com/file/o9ek4o8lsvbwap4/balaikotabykai.txt/file" target="_blank">Balkot Atas Laik Server Hope</a></div>
+  <div class="link-box"><a href="https://www.mediafire.com/file/uynblc04mltsyh2/LSPDCRBYKAI.txt/file" target="_blank">Mapping LSPD Created By Kaii</a></div>
+  <div class="link-box"><a href="https://www.mediafire.com/file/9vicwjgrvewnsaq/wsbykai.txt/file" target="_blank">Workshop Modern</a></div>
+  <div class="link-box"><a href="https://www.mediafire.com/file/19qul98p2zh0vpv/interiorbank.txt/file" target="_blank">Interior Bank Tema Oldschool</a></div>
+
+  <footer>© KaiiMapper.id 2025</footer>
+
+  <!-- 🔊 Script toggle audio + animasi -->
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const toggleBtn = document.getElementById('audio-toggle');
+
+    function toggleAudio() {
+      // Tambahkan class untuk animasi klik
+      toggleBtn.classList.add('clicked');
+
+      // Hilangkan class setelah animasi selesai
+      setTimeout(() => {
+        toggleBtn.classList.remove('clicked');
+      }, 200);
+
+      // Play/pause
+      if (audio.paused) {
+        audio.play();
+        toggleBtn.innerText = '🔊 Audio: On';
+      } else {
+        audio.pause();
+        toggleBtn.innerText = '🔇 Audio: Off';
+      }
+    }
+  </script>
+</body>
+</html>
